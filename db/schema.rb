@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2020_08_26_034912) do
 
   create_table "order_details", force: :cascade do |t|
     t.string "name", null: false, comment: "おなまえ"
-    t.integer "phone", null: false, comment: "電話番号"
+    t.string "phone", null: false, comment: "電話番号"
     t.string "email", null: false, comment: "メールアドレス"
     t.string "company", null: false, comment: "会社名"
     t.integer "quantity", null: false, comment: "注文数"
