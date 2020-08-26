@@ -14,10 +14,10 @@ Rails.application.configure do
 
   # Enable/disable caching. By default caching is disabled.
   # Run rails dev:cache to toggle caching.
-  if Rails.root.join('tmp', 'caching-dev.txt').exist?
+  if Rails.root.join("tmp", "caching-dev.txt").exist?
     config.cache_store = :memory_store
     config.public_file_server.headers = {
-      'Cache-Control' => "public, max-age=#{2.days.to_i}"
+      "Cache-Control" => "public, max-age=#{2.days.to_i}",
     }
   else
     config.action_controller.perform_caching = false
@@ -42,11 +42,26 @@ Rails.application.configure do
   # Highlight code that triggered database queries in logs.
   config.active_record.verbose_query_logs = true
 
-
   # Raises error for missing translations.
   # config.action_view.raise_on_missing_translations = true
 
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+
+  # ActionMailer
+  # メールの送信失敗時にエラーを出す
+  config.action_mailer.raise_delivery_errors = true
+  # メールの送信方法：Simple Mail Transfer Protocol
+  config.action_mailer.delivery_method = :smtp
+  # SMTPの詳細設定
+  config.action_mailer.smtp_settings = {
+    port:            587,
+    address:         "smtp.gmail.com",
+    domain:          "gmail.com",
+    user_name:       "ofuromochi@gmail.com",
+    password:        "xnaumnodmlkslqak",
+    authentication:  "login",
+    enable_starttls: true,
+  }
 end

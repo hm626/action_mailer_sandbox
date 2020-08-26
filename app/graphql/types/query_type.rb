@@ -1,13 +1,17 @@
 module Types
-  class QueryType < Types::BaseObject
+  class QueryType < Types::Objects::BaseObject
     # Add root-level fields here.
     # They will be entry points for queries on your schema.
 
-    # TODO: remove me
-    field :test_field, String, null: false,
-      description: "An example field added by the generator"
-    def test_field
-      "Hello World!"
+    field :send_email,
+          String,
+          null: false do
+            description "Email送信"
+            argument :id, ID, required: true
+          end
+    def send_email(id:)
+      binding.irb
+      OrderDetailMailer.with(order_detail: OrderDetail.find(id)).welcome_email.deliver
     end
   end
 end

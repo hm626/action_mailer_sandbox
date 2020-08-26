@@ -9,5 +9,11 @@ module Types::Objects
     field :email, String, null: false, description: "メールアドレス"
     field :company, String, null: false, description: "会社名"
     field :quantity, Integer, null: false, description: "注文数"
+
+    field :send_email, String, null: false, description: ""
+
+    def send_email
+      self.welcome_email
+    end
   end
 end
