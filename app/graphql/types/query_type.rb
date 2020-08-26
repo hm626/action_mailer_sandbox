@@ -10,7 +10,6 @@ module Types
             argument :id, ID, required: true
           end
     def send_email(id:)
-      binding.irb
       OrderDetailMailer.with(order_detail: OrderDetail.find(id)).welcome_email.deliver
     end
   end
