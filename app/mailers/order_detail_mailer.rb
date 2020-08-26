@@ -1,6 +1,6 @@
 class OrderDetailMailer < ApplicationMailer
   # default(Hash)
-  default from: "ofuromochi@gmail.com"
+  default from: ""
 
   def welcome_email
     # @order_detail = params[:order_detail]
