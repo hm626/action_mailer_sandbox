@@ -64,6 +64,7 @@ GEM
     benchmark (0.1.0)
     bootsnap (1.4.8)
       msgpack (~> 1.0)
+    brakeman (4.9.0)
     builder (3.2.4)
     byebug (11.1.3)
     choice (0.2.0)
@@ -73,6 +74,11 @@ GEM
     diff-lcs (1.4.4)
     e2mmap (0.1.0)
     erubi (1.9.0)
+    factory_bot (6.1.0)
+      activesupport (>= 5.0.0)
+    factory_bot_rails (6.1.0)
+      factory_bot (~> 6.1.0)
+      railties (>= 5.0.0)
     ffi (1.13.1)
     formatador (0.2.5)
     globalid (0.4.2)
@@ -87,6 +93,15 @@ GEM
       pry (>= 0.9.12)
       shellany (~> 0.0)
       thor (>= 0.18.1)
+    guard-brakeman (0.8.6)
+      brakeman (>= 2.1.1)
+      guard (>= 2.0.0)
+      guard-compat (~> 1.0)
+    guard-compat (1.2.1)
+    guard-rspec (4.7.3)
+      guard (~> 2.1)
+      guard-compat (~> 1.1)
+      rspec (>= 2.99.0, < 4.0)
     i18n (1.8.5)
       concurrent-ruby (~> 1.0)
     i18n_generators (2.2.2)
@@ -122,6 +137,7 @@ GEM
     parser (2.7.1.4)
       ast (~> 2.4.1)
     pg (1.2.3)
+    power_assert (1.1.7)
     pry (0.13.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -170,6 +186,10 @@ GEM
     reverse_markdown (2.0.0)
       nokogiri
     rexml (3.2.4)
+    rspec (3.9.0)
+      rspec-core (~> 3.9.0)
+      rspec-expectations (~> 3.9.0)
+      rspec-mocks (~> 3.9.0)
     rspec-core (3.9.2)
       rspec-support (~> 3.9.3)
     rspec-expectations (3.9.2)
@@ -178,6 +198,9 @@ GEM
     rspec-mocks (3.9.1)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.9.0)
+    rspec-power_assert (1.1.0)
+      power_assert (~> 1.1.0)
+      rspec (>= 2.14)
     rspec-rails (4.0.1)
       actionpack (>= 4.2)
       activesupport (>= 4.2)
@@ -251,14 +274,18 @@ DEPENDENCIES
   annotate
   bootsnap (>= 1.4.2)
   byebug
+  factory_bot_rails
   graphql
   guard
+  guard-brakeman
+  guard-rspec
   i18n_generators
   listen (~> 3.2)
   pg (>= 0.18, < 2.0)
   puma (~> 4.1)
   rails (~> 6.0.3, >= 6.0.3.2)
   rails-erd
+  rspec-power_assert
   rspec-rails
   rubocop
   rubocop-performance
