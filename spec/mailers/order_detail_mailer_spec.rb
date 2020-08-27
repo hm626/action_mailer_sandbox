@@ -13,7 +13,7 @@ RSpec.describe OrderDetailMailer, type: :mailer do
     end
     it "本文が期待通りの内容である" do
       is_asserted_by { mail.to == [order_detail.email] }
-      is_asserted_by { mail.from == ["ofuromochi@gmail.com"] }
+      is_asserted_by { mail.from == ["from@example.com"] }
       is_asserted_by { mail.subject == "ようこそ!!!!!!!!!" }
       is_asserted_by { file_fixture("welcome_email_spec.html.erb").read.include?("<p>ご入会ありがとうございます。どうぞお楽しみくださいませ。</p>") }
     end
