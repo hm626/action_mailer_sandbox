@@ -4,4 +4,9 @@ class OrderDetailMailerPreview < ActionMailer::Preview
     order_detail = FactoryBot.create(:order_detail)
     OrderDetailMailer.with(order_detail: order_detail).welcome_email
   end
+
+  def another_welcome_email
+    order_detail = OrderDetail.second
+    OrderDetailMailer.with(order_detail: order_detail).welcome_email
+  end
 end

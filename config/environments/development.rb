@@ -52,15 +52,14 @@ Rails.application.configure do
   # ActionMailer
   # メールの送信失敗時にエラーを出す
   config.action_mailer.raise_delivery_errors = true
-  # メールの送信方法：Simple Mail Transfer Protocol
   config.action_mailer.delivery_method = :smtp
   # SMTPの詳細設定
   config.action_mailer.smtp_settings = {
     port:            587,
     address:         "smtp.gmail.com",
     domain:          "gmail.com",
-    user_name:       "USERNAME",
-    password:        "PASSWORD",
+    user_name:       "ofuromochi@gmail.com",
+    password:        "xnaumnodmlkslqak",
     authentication:  "plain",
     enable_starttls: true,
   }
