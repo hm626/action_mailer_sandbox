@@ -65,3 +65,4 @@ erd.pdf
 # rspec
 .rspec
 .vscode/
+config/environments/development.rb
